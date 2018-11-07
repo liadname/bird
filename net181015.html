@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#nbm1{
+				width: 300px;
+				height: 200px;
+				float: left;
+				border: 1px solid #000000 ;
+			}
+			#nbm2{
+				width: 300px;
+				height: 200px;
+				float: right;
+				border: 1px solid #000000 ;
+			}
+			
+		</style>
+	</head>
+	
+	<body>
+		<div id="nbm1">
+			kadkjdsfjfkajsksahbvaewngjaehaekaegeageagae
+		</div>
+		<div id="nbm2">
+			
+		</div>
+	</body>
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript">
+		
+		var numbers = [65,44,12,4];
+		function getSum(total,num){
+			return total + num;
+		}
+		console.log(numbers.reduce(getSum));
+		
+		
+		var fruits = ["Banana", "Orange", "Apple", "Mango"];
+		var arr = [2, 4, 23,51];
+		console.log(fruits);
+		var x = fruits.entries();
+		
+		var a = [];
+		
+		for (let e of x) {
+		    
+		   	console.log("键:",e);
+    		console.log("值:",x[e]);
+    		a.push(e);
+		}
+		console.log( a  );
+		function add (age){
+			return age > 40;
+		}
+		const  result = arr.filter( word => word > 0);
+		console.log( );
+		console.log( result);
+		
+		let select1 = window.getSelection();
+		if( select1.toString().trim() ){
+			alert(1);
+		};
+		
+	</script>
+</html>

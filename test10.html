@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+		<style type="text/css">
+			p{
+				font-size: 20px;
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<p>我是一个测试页面</p>
+		<button onclick="" class="iclick">我是测试按钮！</button>
+		<button onclick="" class="aa">我是测试aa函数的按钮！</button>
+		<button onclick="" class="json">我是测试状态的按钮！</button>
+	</body>
+	<script>
+		$(function(){
+			
+			$(".iclick").click(function(){			  	   			 
+			  	external.nativeCall("SLRegisterNofity", ["LIDNotify"]);
+			  });
+			  $(".aa").click(function(){			  	   			 
+			  	external.nativeCall("TestExecuteJS",[]);
+			  });
+			  $(".json").click(function(){			  	   			 
+			  	  var a = external.nativeCall("SLGetNativeInfo");
+			  	  console.log(a);
+			  });
+		})
+		
+		function SLGetNativeInfo(index){
+			alert(index);
+		}
+		function SLLIDNotify(index){
+			
+			console.log(index);
+			
+		}
+		function aa(index){
+			alert(index);
+		}
+	</script>
+</html>

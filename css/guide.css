@@ -1,0 +1,30 @@
+.banner {
+    width: 100%;
+}
+
+.container {
+    text-align: center;
+    color: #787878;
+    font-size: calc(2.327rem / 2);
+}
+
+h1 {
+    color: #44cdfc;
+    font-weight: bold;
+    font-size: calc(3.657rem / 2);
+    margin: 0 0 0.997rem 0;
+}
+
+p {
+    margin: 0 3.158rem;
+    text-align: left;
+    line-height: 1.4;
+}
+
+.container h1:first-child {
+    margin-top: calc(6.483rem / 2);
+}
+
+.container h1:nth-child(3) {
+    margin-top: calc(7.979rem / 2);
+}

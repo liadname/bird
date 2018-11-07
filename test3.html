@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<iframe id="iframe" src="http://192.168.1.4:8020/mylife/test2.html"></iframe>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		 function aa(a){
+		 	alert("本页的aa方法调用成功,参数"+a );
+		 }
+		 
+		 function iff(b){
+			document.getElementById("iframe").contentWindow.ff(b);
+		}
+		
+		
+		
+		
+		 function isChange (oldValue, newValue) {
+		    var change = false
+		    if (oldValue && newValue) { 
+		      change = oldValue !== newValue  //false
+		    } else if (oldValue || newValue) {
+		      change = true
+		    } else {
+		      change = false
+		    }
+		    return change
+		  }
+		var oldlid = 2 ;
+		var lenovoId = 2;
+		var olduid = 4;
+		var uid = 4;
+		
+							// 不相等				不相等
+		var change =  isChange(oldlid, lenovoId) || isChange(olduid, uid);
+		console.log(change);  //相等为true   不相等为false
+	</script>
+</html>

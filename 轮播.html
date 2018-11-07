@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>swiper</title>
+   
+    <style>
+        .swiper-container {
+		    width: 600px;
+		    height: 300px;
+		}   
+        .swiper-slide{
+            width: 600px;
+            height: 300px;
+        }
+        .swiper-slide img{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    
+	</head>
+	
+	<body>
+	
+		
+	<div class="swiper-container">
+	    <div class="swiper-wrapper">
+	        <div class="swiper-slide">Slide 1</div>
+	        <div class="swiper-slide">Slide 2</div>
+	        <div class="swiper-slide">Slide 3</div>
+	    </div>
+	    <!-- 如果需要分页器 -->
+	    <div class="swiper-pagination"></div>
+	    
+	    <!-- 如果需要导航按钮 -->
+	    <div class="swiper-button-prev"></div>
+	    <div class="swiper-button-next"></div>
+	    
+	    <!-- 如果需要滚动条 -->
+	    <div class="swiper-scrollbar"></div>
+	</div>
+
+	
+
+   
+    
+	</body>
+
+	<script type="text/javascript">
+    	
+    	var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        paginationClickable: true,
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: 2500,
+        autoplayDisableOnInteraction: false
+    	});
+
+  
+    </script>
+</html>

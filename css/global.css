@@ -1,0 +1,28 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-family: '微软雅黑', 'Microsoft Yahei', 'arial';
+
+    cursor: default;
+
+    line-height: 1;
+
+    user-select: none;
+    -moz-user-select: -moz-none;
+    -moz-user-select: none;
+    -o-user-select:none;
+    -khtml-user-select:none;
+    -webkit-user-select:none;
+    -ms-user-select:none;
+
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    overflow-scrolling: touch;
+    tap-highlight-color: rgba(0,0,0,0);
+    -webkit-font-smoothing: subpixel-antialiased;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    /* 增加该属性，可以增加弹性 */
+    -webkit-overflow-scrolling: touch;
+}
+

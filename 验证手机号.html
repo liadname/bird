@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+		<style type="text/css">
+			/*.open_close_btn .img1,.open_close_btn.onTouch .img3,.open_close_btn.open .img2{display: block;}
+			.open_close_btn .img2,.open_close_btn .img3,.open_close_btn.onTouch .img1,.open_close_btn.onTouch .img2,.open_close_btn.open .img3,.open_close_btn.open .img1{display: none;}
+			
+			.nook{
+				
+				color: red;
+			}*/
+			
+			.img2{
+				display: none;
+			}
+			.img1{
+				display: block;
+			}
+			.img3{
+				display: none;
+			}
+			input::-webkit-outer-spin-button,
+			input::-webkit-inner-spin-button{
+			    -webkit-appearance: none !important;
+			    margin: 0;
+			}
+			input[type="number"]{-moz-appearance:textfield;}
+			.code{
+				border: 0;
+				display: inline-block;
+				border-radius: 20px;
+				background: bisque;
+				width: 100px;
+				height: 25px;
+				text-align: center;
+				line-height: 25px;
+			}
+			.ww{
+				width: 200px;
+				height: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<input class="test"  type="number" id="phone" oninput="if(value.length>11)value=value.slice(0,11)" placeholder="请输入手机号" /> 
+		<input type="button" class="code" onclick="setTime(this)" value="获取验证码" ></input>
+		</br><span class="nook"></span></br>
+		
+		
+		<input type="text" id="borrowValue">  
+    	<span id="repayValue">0</span>  
+    	
+    	
+    	<div class="xq_close_btn ind_cont_switch open_close_btn ">
+    		<img class="img1 none" src="images/close_btn_dark.png" alt=""/>
+            <img class="img2 none" src="images/close_btn_red.png" alt=""/>
+            <img class="img3 none" src="images/close_btn_hover.png" alt=""/>
+            <p>开关</p>
+    		
+    	</div>
+    	<div class="ww" onclick="ww()"> 
+    		我是一个可爱的测试按钮
+    	</div>
+	</body>
+	<script type="text/javascript">
+		
+//	alert(navigator.userAgent);
+		function say (value) {
+		    console.log(value);
+		}
+		function execute (someFunction, value) {
+		    someFunction(value);
+		}
+		execute(say,'hi js.');
+		//=========== 上面是回调函数
+		
+		
+		var  arr = [22,23,4,4,565,65,8848,4,653];
+		for (var i = 0;i<arr.length ; i++){
+			var a = arr.length-2;
+		}
+		console.log(arr.slice(0,length-3));
+		//=========== 上面是取数组后三位
+		
+		
+		$('#borrowValue').bind('input propertychange', function() {  
+            var loadInterest = '4';  
+            var borrowValue = $(this).val();  
+            var repayValue = loadInterest*30*borrowValue/10000;  
+            $("#repayValue").html(repayValue);  
+        });  
+		
+		
+		//=========== 上面是监听input实例
+		
+		
+//		$('input').bind('input blur', function() {
+//		    
+//		  	var borrowValue = $(this).val(); 
+//		  	console.log($('input').val());
+//		   	var borrowValue1 = $('input').val();
+//		    var myreg = /^[1][3,4,5,7,8][0-9]{9}$/;
+//		   	if(borrowValue.length = 0){
+//		    $(".nook").html(" "); 
+//		    	console.log('我是一只小猪猪');
+//		    }
+//		    else if(!myreg.test(borrowValue)) {
+//		    	$(".nook").html("请输入正确的手机号");  
+//		      	return false;
+//		      
+//		    }else {
+//		    	$(".nook").html("手机号正确"); 
+//		      return true;
+//		    }
+//			  
+//		});
+// 自认为完美的手机验证流程；
+		$('input').on('blur', function() {
+		    var borrowValue1 = $('input').val();
+		   	console.log($('input').val());
+		   	console.log(typeof(borrowValue1));
+		    var myreg = /^[1][3,4,5,7,8][0-9]{9}$/;
+		   	if(borrowValue1 == null || borrowValue1.length == 0){
+		    	$(".nook").html(""); 
+		    	console.log('我是一只小猪猪');
+		    	return;
+		    }
+		    else if(!myreg.test(borrowValue1)) {
+		    	$(".nook").html("请输入正确的手机号");  
+		    	console.log('我是请输入');
+		      	return false;
+		      
+		    }else {
+		    	$(".nook").html("手机号正确").css('color','greenyellow'); 
+		    	
+		      return true;
+		    }
+			  
+		});
+	
+			var countDown = 60;
+			function setTime(val) { 
+		    if (countDown == 0) { 
+			    val.removeAttribute("disabled");    
+			    val.value="获取验证码";
+			    countDown = 60;
+			    return;
+		    } else { 
+			    val.setAttribute("disabled", true); 
+			    val.value="重新发送(" + countDown + ")"; 
+			    countDown--; 
+			    $(".code").css("background","beige");
+		    } 
+		    setTimeout(function() { 
+		    	setTime(val) 
+		    	},1000) 
+	    	};
+	
+		//例如：
+		var href = 'http://html.zai0312.com/cs.html?gadget_id=298892786ushuihvu19288988';
+    
+    var gadgetId = href.split("gadget_id=")[1];
+    console.log(gadgetId);
+    var a = 1;
+     		$(".img1").on("click",function(){
+     				$(".img2").show();
+     				$(".img1").hide();
+        });
+        $(".img2").on("click",function(){
+     				$(".img2").hide();
+     				$(".img1").show();
+        });
+        
+        
+               	
+        var temkids = 0;
+        if(temkids == "0"){
+        	
+        }else{
+        	
+        }
+       
+        console.log(typeof(temkids));
+        
+        $(".ww").click(function(){
+        	
+        })
+        function ww(){
+        	alert(333);
+        }
+	</script>
+</html>

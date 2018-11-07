@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+		<link rel="stylesheet" href="css/normalize.css" type="text/css" media="screen" title="no title" charset="utf-8">
+		<script src="js/compatible-1.0.0.min.js"></script>
+		<style type="text/css">
+		
+		.ab{
+			width: 7.5rem;
+			height: 7.5rem;
+			font-size: .3rem;
+			float: float;
+			
+			
+		}
+		.look{
+			width: 5rem;
+			height: 1.5rem;
+			font-size: .26rem;
+			margin: auto;
+			text-align: center;
+			line-height: 1.5rem;
+			background: pink;
+			border-radius: .5rem;
+		}
+		img{
+			width: 400px;
+    		height: 200px;
+		}
+		.test{
+			width: 5rem;
+			height: 5rem;
+			border-radius: 5rem;
+		}
+		
+		</style>
+		
+	</head>
+	<body>
+		<div class="look">我想看看新闻耶！点我</div>
+		<div class="ab">
+			
+			<div class="test">
+				点我测试点我测试
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		$(function(){
+		    $('.look').click(function(){
+		         $.ajax({
+		             type: "GET",
+		             url: "https://www.easy-mock.com/mock/59c9bdd4e0dc663341ba7dc0/example/360news/test",
+		             dataType: "json",
+		             data:{ },
+		             success: function(data){
+		             	
+		             	$('.ab').empty();   //清空resText里面的所有内容
+                         var html = ''; 
+                         var information  = data.data;
+                         console.log(data.data);
+                         $.each(information, function(index, element){
+                               html += '<div class="comment"><h6>' + element.title
+                                         + ':</h6><img src='+ element.imageUrls + '><p class="para">' + element.publishDateStr
+                                         + '</p></div>';
+                         });
+                         $('.ab').html(html);
+                         
+                      }
+		         });
+		    });
+		    
+//		alert(navigator.userAgent);
+		var LenSmJsU = navigator.userAgent;
+//		isWindows = LenSmJsU.indexOf('Windows') > -1;
+		isWindows = LenSmJsU.indexOf('Windows') > -1;
+		
+		if(isWindows == true){
+			$('.test').bind('click',function(){
+				alert('我是pc端点击事件');
+			})
+		}else{
+			
+		}
+		    
+		    
+		   //定时器面试题：
+		   for (var i = 0;i< 5;i++){
+		   	setTimeout(function(){
+		   		console.log(new Date,i);
+		   	},1000);
+		   }
+		   //弹出来5个 因为js是
+		    
+		    
+		    
+		    
+		    
+		    
+		});
+		//正则去掉''\'符号
+		var a = "wout\wuhga\oiauig";
+		var str = a.replace(/["\"]/g,'');
+		console.log(str);
+		
+
+	</script>
+</html>

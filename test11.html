@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+	</body>
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript">
+		
+//		function teacher(name){
+//			this.name = name;
+//		}
+//		teacher.prototype.sayName = function(){
+//			console.log('name is'+ this.name);
+//		}
+//		let teacher1 = new teacher('xiaoming');
+//		teacher1.sayName();
+//		
+//		function student(name){
+//			this.name = name;
+//		}
+//		student.prototype = new teacher();
+//		var student1 = new student('xiaolan');
+//		student1.sayName();
+		
+		
+		var str = 'asfafdsdsfsafasfa';
+		var json = {};
+		for(var i ;i < str.length;i++){
+			if(!json[str.charAt(i)]){
+				json[str.charAt(i)] = 1;
+			}else{
+				json[str.charAt(i)]++;
+			}
+		}
+		
+		
+	 	let str1 = "hello";
+	 	let str2 = "world";
+	 	console.log(str1.concat(str2));
+	 	var str3 = "hello world!";
+	 	console.log(str3.substr(3,7));
+	 	console.log(str.lastIndexOf("a") + "长度" +str.length);
+	 	
+	 	
+	 	let arr = [1,2,3,4,5,5,6,7,7,77,0];
+	 	var obj = {};
+	 	var tmp = [];
+	 	for(var i = 0 ;i<arr.length;i++){
+	 		if(!obj[arr[i]]){
+	 		obj[arr[i]] = 1;
+	 		tmp.push(arr[i]);
+	 		}
+	 	}
+	 	console.log(tmp);
+	 	
+	 	
+	 	
+	 	
+//	 	var obj = new Object(){
+//	 		this.age = 18;
+//	 	}
+		//对象字面量
+	 	var obj = {
+	 		age : '19',
+	 		name: 'json'
+	 	}
+	 	//构造函数
+	 	var obj = new Object();
+	 	obj.name ="lad";
+	 	
+	 	
+	 	function bj(name){
+		 	this.name = name;
+		 	this.age = 20;
+	 	}
+	 	var obj = new bj('lyl');
+	 	
+	 	
+	 	
+	 	var built = function(){
+	 		this.name = "Arvin";
+	 		
+	 	}
+	 	built.prototype = {
+	 		toStri: function(value){
+	 			alert('there have a '+ value);
+	 		}
+	 	}
+	 	
+	 	var obj = new built();
+	 	
+	 	var person = new Object();
+	 	person.name = "nike";
+	 	person.age = 29;
+	 	var person1 = {};
+	 	var person1 = {
+	 		name:'nike',
+	 		age: 29
+	 	}
+	 	function createPerson(name,age ,job){
+	 		var o = new Object();
+	 		o.name = name;
+	 		o.age  =age;
+	 		o.job = job;
+	 		o.syaName = function(){
+	 			alert(this.name );
+	 		}
+	 		return o;
+	 	}
+	 	var numbers  = [5,458,120,-215];
+	 	var maxInNumbers = Math.max.apply(this, numbers);
+	 	console.log(maxInNumbers);
+	 	var maxInNumbers = Math.max.call(this,5,458,120,-215);
+	 	console.log(maxInNumbers);
+	 	
+	 	
+	 	var str = 'asdgasgsaga';
+	 	var json ={};
+	 	for (var  i =0;i<str.length;i++){
+	 		if(!json[str.charAt(i)]){ // 
+	 			json[str.charAt(i)] = 1;
+	 		}else{
+	 			console.log(json[str.charAt(i)]);
+	 			json[str.charAt(i)]++;
+	 		}
+	 	}
+	 	var iMax = 0;
+	 	var iIndex = '';
+	 	for(var i in json){
+	 		if(json[i] > iMax){
+	 			iMax = json[i];
+	 			iIndex = i;
+	 		}
+	 	}
+	 	console.log("出现次数最多的是：" + iIndex + "出现：" +iMax+'次');
+	 	
+	 	
+	 	
+	 	//对象字面量
+	 	 var obj = {
+	 	 	name :"www",
+	 	 	age :80
+	 	 	
+	 	 }
+	 	 obj.lsdi = "iiiii";
+	 	 
+	 	 console.log(obj['name']);
+	 	 
+	 	 //构造函数
+	 	 var obj123 = new Object();
+	 	 obj123.name = "www";
+	 	 obj123.age = 90;
+	 	
+	 	 
+	 	 
+	 	 function Obj9090 (name){
+	 	 	this.name =	name ;
+	 	 	this.age = 18;
+	 	 }
+	 	 var obj = new Obj9090("kdjskjfs");
+	 	
+	 	 var test = 'george,john,thomas';
+	 	 console.log(test.split(' ',3));
+	 	 
+	 	 
+	 	 var  object123 = [{x: 22},{y: 42}];
+	 	 var  maxCallback = (acc, cur) => Math.max(acc.x,cur.x);
+	 	 var tset = object123.reduce(maxCallback);
+	 	 console.log(tset);
+	 	 
+	</script>
+</html>
